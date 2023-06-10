@@ -17,10 +17,8 @@ void create_account(accounts* account) {
     std::cout << std::endl;
 }
 
-void change_account(accounts* account) {
-    std::cout << "Введите новый баланс: ";
-    std::cin >> account->balance;
-    std::cout << std::endl;
+void change_account(accounts* account, double balance) {
+    account->balance = balance;
 }
 
 void print_account(accounts* account) {
@@ -36,7 +34,12 @@ int main()
 
     create_account(&account);
 
-    change_account(&account);
+    double balance = 0;
+    std::cout << "Введите новый баланс: ";
+    std::cin >> balance;
+    std::cout << std::endl;
+
+    change_account(&account, balance);
 
     print_account(&account);
 
