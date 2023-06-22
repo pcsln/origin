@@ -1,0 +1,3 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(the_project_is_more_complicated)
+add_executable(hierarchy hierarchy.cpp EquilateralTriangle.cpp EquilateralTriangle.h Figure.cpp Figure.h IsoscelesTriangle.cpp IsoscelesTriangle.h IsoscelesTriangle.cpp IsoscelesTriangle.h Parallelogram.cpp Parallelogram.h Quadrangle.cpp Quadrangle.h RectangleC.cpp RectangleC.h Rhomb.cpp Rhomb.h RightTriangle.cpp RightTriangle.h Square.cpp Square.h Triangle.cpp Triangle.h)
