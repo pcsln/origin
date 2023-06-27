@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Task03",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "GreeterLibraryStatic::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GreeterLibraryStatic-Debug-dba5a3604bc218808999.json",
+					"name" : "GreeterLibraryStatic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LeaverLibraryDynamic::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LeaverLibraryDynamic-Debug-2343e1eef5a54d5aceba.json",
+					"name" : "LeaverLibraryDynamic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Task03::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Task03-Debug-7005a74d500ef3ec867c.json",
+					"name" : "Task03",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/pcsln/OneDrive/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/origin/Lesson11/Task03/out/build/x64-Debug",
+		"source" : "C:/Users/pcsln/OneDrive/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/origin/Lesson11/Task03"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

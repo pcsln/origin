@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(Task03)
+add_library(GreeterLibraryStatic STATIC Greeter.h Greeter.cpp)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_library(LeaverLibraryDynamic SHARED Leaver.h Leaver.cpp)
+add_executable(Task03 Task03.cpp)
+target_link_libraries(Task03 LeaverLibraryDynamic GreeterLibraryStatic)
