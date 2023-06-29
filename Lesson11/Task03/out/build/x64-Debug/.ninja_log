@@ -1,8 +1,0 @@
-# ninja log v5
-18	3666	7095970329463807	CMakeFiles/LeaverLibraryDynamic.dir/Leaver.cpp.obj	eb2255d962979e2d
-8	3818	7095970329888730	CMakeFiles/GreeterLibraryStatic.dir/Greeter.cpp.obj	b502d856f55cd688
-3818	5089	7095970341339416	GreeterLibraryStatic.lib	3f9f8da6bc57be0d
-26	6116	7095970354030291	CMakeFiles/Task03.dir/Task03.cpp.obj	460eae2eb1a22b9d
-3676	6299	7095970355700543	LeaverLibraryDynamic.dll	1fca15c4308680c6
-3676	6299	7095970355700543	LeaverLibraryDynamic.lib	1fca15c4308680c6
-6299	7101	7095970363665600	Task03.exe	5d911605d230db98

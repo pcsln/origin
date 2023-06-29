@@ -1,5 +1,0 @@
-C:/Users/pcsln/OneDrive/Рабочий стол/origin/Lesson11/Task03/out/build/x64-Debug/CMakeFiles/GreeterLibraryStatic.dir
-C:/Users/pcsln/OneDrive/Рабочий стол/origin/Lesson11/Task03/out/build/x64-Debug/CMakeFiles/LeaverLibraryDynamic.dir
-C:/Users/pcsln/OneDrive/Рабочий стол/origin/Lesson11/Task03/out/build/x64-Debug/CMakeFiles/Task03.dir
-C:/Users/pcsln/OneDrive/Рабочий стол/origin/Lesson11/Task03/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Users/pcsln/OneDrive/Рабочий стол/origin/Lesson11/Task03/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
