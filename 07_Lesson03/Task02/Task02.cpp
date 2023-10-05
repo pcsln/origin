@@ -5,24 +5,42 @@ private:
     int max_index;
     int size;
     int* a;
-public:
-    smart_array(int count_elements) {
-        create(count_elements);
-    }
-    ~smart_array() {
-        std::cout << "delete" << std::endl;
-        delete[] a;
-    }
     void create(int count_elements) {
         a = new int[count_elements]();
         size = count_elements;
         max_index = -1;
     }
-    void delete_() {
+public:
+    smart_array(int count_elements) {
+        create(count_elements);
+    }
+    smart_array(smart_array& other) {
+        create(other.get_size());
+
+        for (int i = 0; i < other.get_size(); ++i) {
+            add_element(other.get_element(i));
+        }
+    }
+    ~smart_array() {
+        std::cout << "delete" << std::endl;
         delete[] a;
     }
+
+    smart_array& operator=(smart_array& other) {
+        delete[] a;
+
+        create(other.get_size());
+
+        for (int i = 0; i < other.get_size(); ++i) {
+            add_element(other.get_element(i));
+        }
+        
+        return *this;
+    }
+
     void add_element(int element) {
         if (max_index == size - 1) {
+            std::cout << "Attempt to add an element to a filled array." << std::endl;
             return;
         }
         else {
@@ -31,8 +49,9 @@ public:
         }
     }
     int get_element(int i) {
-        if ((i < 0) || (i > size - 1)) {
-            return a[max_index];
+        if ((i < 0) || (i > max_index)) {
+            std::cout << "An attempt to access a non-existent element." << std::endl;
+            return 0;
         }
         else {
             return a[i];
@@ -66,17 +85,13 @@ int main()
     arr.print_array("First array: ");
     new_array.print_array("Second array: ");
 
-    arr.delete_();
-
-    arr.create(new_array.get_size());
-
-    for (int i = 0; i < new_array.get_size(); ++i) {
-        arr.add_element(new_array.get_element(i));
-    }
+    smart_array third_array(arr);
+    arr = new_array;
 
     std::cout << "After copy +++++++++++++++++++" << std::endl;;
     
     arr.print_array("First array: ");
     new_array.print_array("Second array: ");
+    third_array.print_array("Third array: ");
 
 }

@@ -14,8 +14,13 @@ public:
     ~smart_array() {
         delete[] a;
     }
+
+    smart_array(const smart_array&) = delete;
+    smart_array& operator=(const smart_array&) = delete;
+
     void add_element(int element) {
         if (max_index == size - 1) {
+            std::cout << "Attempt to add an element to a filled array." << std::endl;
             return;
         }
         else {
@@ -24,12 +29,13 @@ public:
         }
     }
     int get_element(int i) {
-        if ((i < 0) || (i > size - 1)) {
-            return a[max_index];
+        if ((i < 0) || (i > max_index)) {
+            std::cout << "An attempt to access a non-existent element." << std::endl;
+            return 0;
         }
         else {
             return a[i];
-        }  
+        }
     }
 };
 
@@ -42,7 +48,10 @@ int main()
         arr.add_element(155);
         arr.add_element(14);
         arr.add_element(15);
-        std::cout << arr.get_element(2) << std::endl;
+        arr.add_element(16);
+        std::cout << arr.get_element(3) << std::endl;
+
+        //smart_array arr2 = arr;
     }
     catch (const std::exception& ex) {
         std::cout << ex.what() << std::endl;
