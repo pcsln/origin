@@ -27,6 +27,11 @@ public:
     }
 
     smart_array& operator=(smart_array& other) {
+        if (a == other.a) {
+            std::cout << "Incorrect action" << std::endl;
+            return *this;
+        }
+
         delete[] a;
 
         create(other.get_size());
@@ -87,6 +92,8 @@ int main()
 
     smart_array third_array(arr);
     arr = new_array;
+
+    arr = arr;
 
     std::cout << "After copy +++++++++++++++++++" << std::endl;;
     
