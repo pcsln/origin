@@ -277,7 +277,7 @@ int main() {
 		Person person;
 		person.create_tables();
 		
-		// Добавление в базу персон с телефоном
+		// Добавление в базу персон  с телефоном
 		
 		person.insert_person("Alex", "Rodin", "rodin@mail.ru", "+79272325810");
 		person.insert_person("Maximilian", "Rodin", "max@mail.ru", "+79272325811");
