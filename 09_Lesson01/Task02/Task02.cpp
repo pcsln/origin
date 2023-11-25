@@ -15,10 +15,10 @@ void print_hardware_concurrency()
     std::cout << "Hardware concurrency: " << std::thread::hardware_concurrency() << std::endl << std::endl;
 }
 
-std::vector<int> addition(std::vector<int> vector_1, std::vector<int> vector_2) {
+std::vector<int> addition(std::vector<int> vector_1, std::vector<int> vector_2, int begin, int end) {
     std::call_once(flag, print_hardware_concurrency);
     std::vector<int> result;
-    for (auto i = 0; i != vector_1.size(); ++i) {
+    for (auto i = begin; i != end - 1; ++i) {
         result.push_back(vector_1[i] + vector_2[i]);
     }
     return result;
@@ -26,10 +26,10 @@ std::vector<int> addition(std::vector<int> vector_1, std::vector<int> vector_2) 
 
 
 int main()
-{   
+{
     std::vector<std::vector<double>> result_time(4);
     auto result_time_i = 0;
-    
+
     for (auto vector_size = 1000; vector_size != 10000000; vector_size *= 10) {
 
         std::vector<int> vector_1(vector_size);
@@ -50,7 +50,12 @@ int main()
             std::vector<std::thread> TV;
             for (size_t i = 0; i != j; i++)
             {
-                TV.push_back(std::thread(addition, vector_1, vector_2));
+                auto begin = i * (vector_size / j);
+                auto end = (i * (vector_size / j)) + (vector_size / j);
+
+                if (end == 992) end = 1000;
+
+                TV.push_back(std::thread(addition, vector_1, vector_2, begin, end));
             }
             for (auto& t : TV)
             {
@@ -60,7 +65,7 @@ int main()
             auto end = std::chrono::steady_clock::now();
             std::chrono::duration<double> elapsed_seconds = end - start;
             result_time[result_time_i].push_back(elapsed_seconds.count());
-            
+
         }
         ++result_time_i;
     }
@@ -73,8 +78,8 @@ int main()
 
     auto count_threads = 1;
     for (size_t i = 0; i < result_time[0].size(); ++i) {
-        count_threads == 1 ? std::cout <<  count_threads << " thread \t" 
-                           : std::cout <<  count_threads << " threads \t";
+        count_threads == 1 ? std::cout << count_threads << " thread \t"
+            : std::cout << count_threads << " threads \t";
         count_threads *= 2;
         for (size_t j = 0; j < result_time.size(); ++j) {
             std::cout << std::setw(15) << result_time[j][i];
