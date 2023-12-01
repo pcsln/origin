@@ -1,0 +1,4 @@
+﻿  Task01.cpp
+C:\Users\pcsln\OneDrive\Рабочий стол\origin\09_Lesson03\Task01\Task01.cpp(16,48): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\pcsln\OneDrive\Рабочий стол\origin\09_Lesson03\Task01\Task01.cpp(39,20): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Task01.vcxproj -> C:\Users\pcsln\OneDrive\Рабочий стол\origin\09_Lesson03\Task01\x64\Debug\Task01.exe

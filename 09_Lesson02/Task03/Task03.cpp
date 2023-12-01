@@ -44,8 +44,10 @@ void swap_data_scoped_lock(Data& data_1, Data& data_2) {
 
 void swap_data_unique_lock(Data& data_1, Data& data_2) {
 
-	std::unique_lock<std::mutex> lock1(data_1.mutex);
-	std::unique_lock<std::mutex> lock2(data_2.mutex);
+	std::unique_lock<std::mutex> lock1(data_1.mutex, std::defer_lock);
+	std::unique_lock<std::mutex> lock2(data_2.mutex, std::defer_lock);
+
+	std::lock(lock1, lock2);
 
 	auto temp_1 = data_1.integer;
 	auto temp_2 = data_1.numeric;
