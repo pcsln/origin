@@ -38,7 +38,7 @@ int main()
 {
     std::srand(time(0));
 
-    int N = 30;
+    int N = 35;
     std::vector<int> array(N);
 
     for (size_t i = 0; i != N; ++i) {
