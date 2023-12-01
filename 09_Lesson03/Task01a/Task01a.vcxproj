@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{85e5bb43-47c6-4595-9618-63eb3f2d52bd}</ProjectGuid>
-    <RootNamespace>Task01</RootNamespace>
+    <ProjectGuid>{d10774df-e7d7-4cad-93a1-678f4fd24bac}</ProjectGuid>
+    <RootNamespace>Task01a</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Task01.cpp" />
+    <ClCompile Include="Task01a.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
