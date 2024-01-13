@@ -47,7 +47,7 @@ void imitation(int i, int calculation_length) {
     std::call_once(flag, print_header, calculation_length);
 
     std::unique_lock<std::mutex> lock_(mutex);
-    consol_parameter::SetPosition(0, i + 1);
+    consol_parameter::SetPosition(0, i);
     std::cout << i << " " << std::this_thread::get_id();
     lock_.unlock();
 
@@ -60,7 +60,7 @@ void imitation(int i, int calculation_length) {
         std::this_thread::sleep_until(std::chrono::system_clock::now() + std::chrono::milliseconds(i * (185 + std::rand() % 100)));
 
         std::unique_lock<std::mutex> lock(mutex);
-        consol_parameter::SetPosition(k + 10, i + 1);
+        consol_parameter::SetPosition(k + 10, i);
         std::cout << char(219);
         lock.unlock();
 
@@ -71,14 +71,14 @@ void imitation(int i, int calculation_length) {
     std::chrono::duration<double> elapsed_seconds = end - start;
 
     std::unique_lock<std::mutex> lock(mutex);
-    consol_parameter::SetPosition(k + 13, i + 1);
+    consol_parameter::SetPosition(k + 13, i);
     std::cout << elapsed_seconds.count();
     lock.unlock(); 
 }
 
 int main()
 {
-    int threads = 10;
+    int threads = 4;
     int calculation_length = 12;
 
 
@@ -86,7 +86,7 @@ int main()
 
     for (size_t i = 0; i != threads; ++i)
     {    
-        thread[i] = std::thread(imitation, i, calculation_length);
+        thread[i] = std::thread(imitation, i + 1, calculation_length);
     }
     for (size_t i = 0; i != threads; ++i)
     {
